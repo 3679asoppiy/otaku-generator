@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>オタク文章ジェネレーター</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <div class="hero">
+      <div class="logo">🤓</div>
+      <h1>オタク文章ジェネレーター</h1>
+      <p>文章をゆるふわオタク風に変換します</p>
+    </div>
+
+    <div class="panel">
+      <div class="section-title">
+        <label for="inputText">入力テキスト</label>
+        <span id="charCount">0文字</span>
+      </div>
+
+      <textarea id="inputText" placeholder="ここに文章を入力してね"></textarea>
+
+      <details class="settings">
+        <summary>変換設定</summary>
+        <div class="settings-body">
+
+          <div class="setting-row">
+            <div>
+              <label for="probability">効果発生確率</label>
+              <p>句読点ごとに効果が付く確率です</p>
+            </div>
+            <div class="range-wrap">
+              <output id="probabilityValue">50%</output>
+              <input type="range" id="probability" min="0" max="100" value="50">
+            </div>
+          </div>
+
+          <div class="setting-row">
+            <div>
+              <label for="style">オタク度</label>
+              <p>付与される効果の種類が変わります</p>
+            </div>
+            <select id="style">
+              <option value="normal">普通のオタク</option>
+              <option value="otaku">濃いオタク</option>
+              <option value="extreme">限界オタク</option>
+            </select>
+          </div>
+
+        </div>
+      </details>
+
+      <div class="buttons">
+        <button id="generateBtn" class="primary">変換する</button>
+        <button id="clearBtn" class="secondary">クリア</button>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="section-title">
+        <label>変換結果</label>
+        <button id="copyBtn" class="copy" disabled>コピー</button>
+      </div>
+      <div id="output" class="output empty">ここに変換結果が表示されます</div>
+    </div>
+
+    <footer>
+      © 2026 オタク文章ジェネレーター
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
